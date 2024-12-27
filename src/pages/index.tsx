@@ -1,4 +1,4 @@
-import { Connector, useAccount, useConnect } from '@starknet-react/core'
+import { useAccount, useConnect } from '@starknet-react/core'
 import { useCallback, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
