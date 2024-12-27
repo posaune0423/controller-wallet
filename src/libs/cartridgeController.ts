@@ -69,7 +69,7 @@ const policies: Policy[] = [
     domain: {
       name: 'Eternum',
       version: '1',
-      chainId: 'mainnet',
+      chainId: 'SN_MAIN',
       revision: '1',
     },
   },
