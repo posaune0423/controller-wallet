@@ -79,7 +79,6 @@ const connector = new ControllerConnector({
   policies,
   rpc,
   slot: 'eternum-prod',
-  theme: 'dark',
   tokens: {
     erc20: [
       // $LORDS

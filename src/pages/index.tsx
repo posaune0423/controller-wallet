@@ -3,11 +3,13 @@ import { useCallback, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { Button } from '../components/Button'
+import { useHaptic } from 'use-haptic'
 
 export const TopPage = () => {
   const navigate = useNavigate()
   const { address } = useAccount()
   const { connectAsync, connectors } = useConnect()
+  const { vibe } = useHaptic()
 
   useEffect(() => {
     if (address) {
@@ -15,23 +17,21 @@ export const TopPage = () => {
     }
   }, [address, navigate])
 
-  const handleConnect = useCallback(
-    async (connector: Connector) => {
-      try {
-        await connectAsync({ connector })
-        toast.success('Successfully logged in')
-      } catch (error) {
-        console.error(error)
-        toast.error('Wallet is not installed')
-      }
-    },
-    [connectAsync],
-  )
+  const handleConnect = useCallback(async () => {
+    vibe()
+    try {
+      await connectAsync({ connector: connectors[0] })
+      toast.success('Successfully logged in')
+    } catch (error) {
+      console.error(error)
+      toast.error('Wallet is not installed')
+    }
+  }, [connectAsync, vibe, connectors])
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 h-screen">
+    <div className="fixed flex flex-col items-center justify-center gap-4 h-screen mx-auto w-full">
       <h1 className="text-2xl font-bold text-[#ffc52a]">Controller Wallet</h1>
-      <Button onClick={() => handleConnect(connectors[0])}>Connect</Button>
+      <Button onClick={handleConnect}>Connect</Button>
     </div>
   )
 }

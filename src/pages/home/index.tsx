@@ -9,7 +9,7 @@ export const HomePage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4 h-screen">
+      <div className="fixed flex flex-col items-center justify-center gap-4 h-screen mx-auto w-full">
         <h1 className="text-2xl font-bold text-[#ffc52a]">Home</h1>
         <Button onClick={() => ctrlConnector.controller.openProfile()}>Inventory</Button>
         <Button onClick={() => ctrlConnector.controller.openProfile('achievements')}>Achievements</Button>
