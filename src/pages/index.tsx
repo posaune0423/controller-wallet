@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { Button } from '../components/Button'
 import { useHaptic } from 'use-haptic'
+import { APP_NAME } from '../constants'
 
 export const TopPage = () => {
   const navigate = useNavigate()
@@ -30,7 +31,7 @@ export const TopPage = () => {
 
   return (
     <div className="fixed flex flex-col items-center justify-center gap-4 h-screen mx-auto w-full">
-      <h1 className="text-2xl font-bold text-[#ffc52a]">Controller Wallet</h1>
+      <h1 className="text-2xl font-bold text-[#ffc52a]">{APP_NAME}</h1>
       <Button onClick={handleConnect}>Connect</Button>
     </div>
   )

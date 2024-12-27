@@ -8,6 +8,7 @@ import { mainnet } from '@starknet-react/chains'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { routes } from './routes'
+import { Toaster } from 'sonner'
 
 const rootElement = document.getElementById('root')
 if (!rootElement) throw new Error('React root not found')
@@ -31,6 +32,7 @@ const main = async () => {
             ))}
           </Routes>
         </BrowserRouter>
+        <Toaster position="bottom-right" theme="dark" />
       </StarknetConfig>
     </StrictMode>
   )
