@@ -5,7 +5,7 @@ export const Button = ({
   className,
   children,
 }: {
-  onClick: () => void
+  onClick?: () => void
   className?: string
   children: React.ReactNode
 }) => {

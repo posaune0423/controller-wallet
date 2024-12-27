@@ -36,7 +36,7 @@ export const GlobalFooter: React.FC = () => {
     <nav
       className={cn(
         'bg-[#0c0c0c] fixed bottom-0 left-0 right-0 flex min-h-[60px] items-center justify-around border-t border-gray-700 px-6 shadow-sm shadow-gray-700',
-        isPWA() && 'pb-8 pt-4',
+        isPWA() && 'pb-10 pt-4',
       )}
     >
       {FooterItems.map((item) => (
